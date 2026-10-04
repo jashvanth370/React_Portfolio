@@ -1,4 +1,5 @@
 import Background from './components/Background';
+import SplashCursor from './components/SplashCursor';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -19,6 +20,7 @@ export default function App() {
 
   return (
     <>
+      <SplashCursor />
       <Background />
       <Navbar activeSection={active} scrolled={scrolled} theme={theme} onToggleTheme={toggleTheme} />
 

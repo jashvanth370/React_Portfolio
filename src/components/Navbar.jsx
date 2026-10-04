@@ -49,30 +49,32 @@ export default function Navbar({ activeSection, scrolled, theme, onToggleTheme }
           ))}
         </ul>
 
-        <button
-          id="theme-toggle"
-          className="nav-link theme-toggle"
-          aria-label="Toggle Dark/Light Theme"
-          onClick={onToggleTheme}
-        >
-          <i className={`fas ${theme === 'light' ? 'fa-sun' : 'fa-moon'}`} />
-        </button>
+        <div className="nav-actions">
+          <button
+            id="theme-toggle"
+            className="nav-link theme-toggle"
+            aria-label="Toggle Dark/Light Theme"
+            onClick={onToggleTheme}
+          >
+            <i className={`fas ${theme === 'light' ? 'fa-sun' : 'fa-moon'}`} />
+          </button>
 
-        <div
-          className={`menu-toggle${menuOpen ? ' active' : ''}`}
-          id="menuToggle"
-          role="button"
-          tabIndex={0}
-          aria-label="Toggle menu"
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen((open) => !open)}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter' || e.key === ' ') setMenuOpen((open) => !open);
-          }}
-        >
-          <span />
-          <span />
-          <span />
+          <div
+            className={`menu-toggle${menuOpen ? ' active' : ''}`}
+            id="menuToggle"
+            role="button"
+            tabIndex={0}
+            aria-label="Toggle menu"
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((open) => !open)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') setMenuOpen((open) => !open);
+            }}
+          >
+            <span />
+            <span />
+            <span />
+          </div>
         </div>
       </div>
     </nav>

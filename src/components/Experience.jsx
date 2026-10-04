@@ -80,9 +80,11 @@ export default function Experience() {
         Experience
       </Reveal>
 
-      {experience.map((item, i) => (
-        <ExperienceCard key={`${item.company}-${i}`} item={item} />
-      ))}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
+        {experience.map((item, i) => (
+          <ExperienceCard key={`${item.company}-${i}`} item={item} />
+        ))}
+      </div>
     </section>
   );
 }

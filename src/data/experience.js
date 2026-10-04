@@ -70,8 +70,8 @@ export const experience = [
   },
   {
     "role": "Software Engineering Intern",
-    "company": "Boffo System Labs (Pvt) Ltd",
-    "companyUrl": "https://www.linkedin.com/company/boffosys/posts/?feedView=all",
+    "company": "Infinity Innovators",
+    "companyUrl": "https://www.infyinnos.com/index.html",
     "bullets": [
       "Developed the frontend and backend for a comprehensive **Salon Management Platform** using clean architecture principles.",
       "Implemented robust **Role-Based Access Control (RBAC)** supporting Super Admin, Owner, Branch Manager, Stylist, and Customer roles.",
@@ -134,7 +134,7 @@ export const experience = [
       }
     ],
     "logo": "assets/logo_infiny.png",
-    "period": "Aug 2025 – Feb 2026",
-    "location": "Nawala Colombo, Sri Lanka"
+    "period": "Jun 2026 – Present",
+    "location": "Level 4, No. 135, Bauddhaloka Mawatha, Colombo 04, Sri Lanka"
   }
 ];

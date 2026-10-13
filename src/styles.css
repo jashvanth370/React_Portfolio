@@ -14,100 +14,106 @@ https://templatemo.com/tm-596-electric-xtra
    ===================================================== */
 
 :root {
-    /* DARK THEME */
-    --bg-color: #0a0a0a;
-    --text-color: #ffffff;
-    --secondary-color: #FF5E00;
-    --accent-color: #00B2FF;
-    --nav-bg: rgba(10, 10, 10, 0.8);
-    --card-bg: rgba(255, 255, 255, 0.03);
-    --card-border: rgba(255, 94, 0, 0.2);
-    --subtitle-opacity: 0.6;
-    --primary: #FF5E00;
-    --secondary: #00B2FF;
-    --primary-rgb: 255, 94, 0;
-    --secondary-rgb: 0, 178, 255;
-    --bg-main: #0a0a0a;
-    --text-main: #ffffff;
-    --particle-color: #FF5E00;
-    --gradient-primary: linear-gradient(45deg, #FF5E00, #00B2FF);
-    --gradient-accent: linear-gradient(90deg, #00B2FF, #FF5E00);
+    /* FONTS */
+    --font-heading: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-display: 'Orbitron', monospace;
+    --font-accent: 'Rajdhani', sans-serif;
+
+    /* MODERN REFINED DARK THEME */
+    --bg-color: #0b0f19;
+    --text-color: #f1f5f9;
+    --secondary-color: #ff6b1a;
+    --accent-color: #00d2ff;
+    --nav-bg: rgba(11, 15, 25, 0.75);
+    --card-bg: rgba(255, 255, 255, 0.035);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --subtitle-opacity: 0.75;
+    --primary: #ff6b1a;
+    --secondary: #00b4d8;
+    --primary-rgb: 255, 107, 26;
+    --secondary-rgb: 0, 180, 216;
+    --bg-main: #0b0f19;
+    --text-main: #f8fafc;
+    --particle-color: #ff6b1a;
+    --gradient-primary: linear-gradient(135deg, #ff6b1a 0%, #00b4d8 100%);
+    --gradient-accent: linear-gradient(135deg, #00b4d8 0%, #ff6b1a 100%);
 
     /* Text */
-    --text-rgb: 255, 255, 255;
-    --text-muted: rgba(255, 255, 255, 0.72);
+    --text-rgb: 241, 245, 249;
+    --text-muted: #94a3b8;
     --text-strong: #ffffff;
-    --on-primary: #ffffff;              /* text on gradient buttons */
+    --on-primary: #ffffff;
 
     /* Surfaces & lines */
     --surface-2: rgba(255, 255, 255, 0.05);
     --surface-3: rgba(255, 255, 255, 0.08);
-    --surface-inset: rgba(0, 0, 0, 0.2);
-    --line: rgba(255, 255, 255, 0.1);
+    --surface-inset: rgba(0, 0, 0, 0.3);
+    --line: rgba(255, 255, 255, 0.08);
     --shadow-rgb: 0, 0, 0;
-    --modal-overlay: rgba(0, 0, 0, 0.75);
+    --modal-overlay: rgba(5, 8, 15, 0.82);
     --logo-bg: #ffffff;
-    --logo-dark-bg: #000000;           /* matches the school crest image */
+    --logo-dark-bg: #000000;
 
     /* Accent palette */
     --accent-teal: #00e5cc;
     --accent-teal-rgb: 0, 229, 204;
     --accent-orange: #ff9500;
-    --mint: #00F5A0;
-    --mint-rgb: 0, 245, 160;
-    --cyan: #00D9F5;
-    --cyan-rgb: 0, 217, 245;
-    --violet: #7928CA;
-    --violet-rgb: 121, 40, 202;
-    --violet-soft: #7F55B1;
-    --pink: #FF0080;
+    --mint: #10b981;
+    --mint-rgb: 16, 185, 129;
+    --cyan: #06b6d4;
+    --cyan-rgb: 6, 182, 212;
+    --violet: #8b5cf6;
+    --violet-rgb: 139, 92, 246;
+    --violet-soft: #a78bfa;
+    --pink: #ec4899;
 
     /* Education pills */
     --pill-purple: #c084fc;
-    --pill-purple-rgb: 121, 40, 202;
-    --pill-green: #4ade80;
-    --pill-green-rgb: 34, 197, 94;
-    --pill-red: #ff0000;
-    --pill-red-rgb: 255, 0, 0;
+    --pill-purple-rgb: 192, 132, 252;
+    --pill-green: #34d399;
+    --pill-green-rgb: 52, 211, 153;
+    --pill-red: #f87171;
+    --pill-red-rgb: 248, 113, 113;
 
     /* Success message */
-    --success: #00ff99;
-    --success-rgb: 0, 255, 150;
+    --success: #10b981;
+    --success-rgb: 16, 185, 129;
 }
 
 body.light-theme {
-    /* LIGHT THEME */
-    --bg-color: #fafafa;
-    --text-color: #111827;
-    --secondary-color: #2563EB;
-    --accent-color: #7C3AED;
-    --nav-bg: rgba(255, 255, 255, 0.95);
+    /* REFINED LIGHT THEME */
+    --bg-color: #f8fafc;
+    --text-color: #0f172a;
+    --secondary-color: #2563eb;
+    --accent-color: #7c3aed;
+    --nav-bg: rgba(255, 255, 255, 0.85);
     --card-bg: #ffffff;
-    --card-border: rgba(0, 0, 0, 0.08);
-    --subtitle-opacity: 0.7;
-    --primary: #2563EB;
-    --secondary: #7C3AED;
+    --card-border: rgba(15, 23, 42, 0.08);
+    --subtitle-opacity: 0.75;
+    --primary: #2563eb;
+    --secondary: #7c3aed;
     --primary-rgb: 37, 99, 235;
     --secondary-rgb: 124, 58, 237;
-    --bg-main: #f3f4f6;
-    --text-main: #1f2937;
-    --particle-color: #2563EB;
-    --gradient-primary: linear-gradient(45deg, #2563EB, #7C3AED);
-    --gradient-accent: linear-gradient(90deg, #7C3AED, #2563EB);
+    --bg-main: #f1f5f9;
+    --text-main: #0f172a;
+    --particle-color: #2563eb;
+    --gradient-primary: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+    --gradient-accent: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%);
 
     /* Text */
-    --text-rgb: 17, 24, 39;
-    --text-muted: rgba(17, 24, 39, 0.72);
-    --text-strong: #111827;
+    --text-rgb: 15, 23, 42;
+    --text-muted: #64748b;
+    --text-strong: #0f172a;
     --on-primary: #ffffff;
 
     /* Surfaces & lines */
-    --surface-2: rgba(17, 24, 39, 0.04);
-    --surface-3: rgba(17, 24, 39, 0.06);
-    --surface-inset: rgba(17, 24, 39, 0.05);
-    --line: rgba(17, 24, 39, 0.1);
-    --shadow-rgb: 17, 24, 39;
-    --modal-overlay: rgba(17, 24, 39, 0.55);
+    --surface-2: rgba(15, 23, 42, 0.04);
+    --surface-3: rgba(15, 23, 42, 0.06);
+    --surface-inset: rgba(15, 23, 42, 0.04);
+    --line: rgba(15, 23, 42, 0.08);
+    --shadow-rgb: 15, 23, 42;
+    --modal-overlay: rgba(15, 23, 42, 0.6);
     --logo-bg: #ffffff;
     --logo-dark-bg: #000000;
 
@@ -141,12 +147,20 @@ body.light-theme .gradient-overlay {
 }
 
 body {
-    font-family: 'Rajdhani', sans-serif;
+    font-family: var(--font-body);
     background: var(--bg-color);
     color: var(--text-color);
     overflow-x: hidden;
     position: relative;
     font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
 }
 
 .nav-actions {

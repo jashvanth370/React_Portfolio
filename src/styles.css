@@ -625,15 +625,15 @@ nav.scrolled {
 /* Rotator Headline */
 .hero-rotator-box {
     width: 100%;
-    min-height: 64px;
-    margin-bottom: 10px;
+    min-height: 76px;
+    margin-bottom: 12px;
     position: relative;
 }
 
 .hero-rotator {
     position: relative;
     width: 100%;
-    min-height: 64px;
+    min-height: 76px;
     display: flex;
     align-items: flex-start;
     text-align: left;
@@ -657,53 +657,63 @@ nav.scrolled {
 
 .rotator-title {
     font-family: var(--font-heading);
-    font-size: clamp(1.4rem, 2.4vw, 2rem);
-    font-weight: 700;
-    letter-spacing: -0.01em;
+    font-size: clamp(1.45rem, 2.5vw, 2.15rem);
+    font-weight: 800;
+    letter-spacing: -0.015em;
     margin: 0;
     line-height: 1.25;
     color: var(--accent-color);
-    text-shadow: 0 0 25px rgba(var(--secondary-rgb), 0.35);
+    text-shadow: 0 0 18px rgba(var(--secondary-rgb), 0.35);
 }
 
 .rotator-char {
     display: inline-block;
+    color: inherit;
     opacity: 0;
-    transform: translateY(18px);
-    animation: rotatorCharIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transform: translateY(16px);
+    animation: rotatorCharIn 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    will-change: transform, opacity;
 }
 
 @keyframes rotatorCharIn {
-    to {
+    0% {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    100% {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
 .rotator-char.out {
-    animation: rotatorCharOut 0.28s cubic-bezier(0.7, 0, 0.84, 0) forwards;
+    animation: rotatorCharOut 0.25s cubic-bezier(0.7, 0, 0.84, 0) forwards;
 }
 
 @keyframes rotatorCharOut {
-    to {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
         opacity: 0;
-        transform: translateY(-16px);
+        transform: translateY(-14px);
     }
 }
 
 .rotator-subtitle {
     font-family: var(--font-body);
     font-size: 1.02rem;
-    line-height: 1.5;
+    line-height: 1.55;
     color: var(--text-muted);
     margin: 6px 0 0 0;
     opacity: 0;
-    transform: translateY(6px);
-    transition: all 0.4s ease;
+    transform: translateY(8px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .rotator-subtitle.visible {
-    opacity: 0.92;
+    opacity: 0.95;
     transform: translateY(0);
 }
 
@@ -2804,90 +2814,6 @@ footer {
     list-style-type: none;
 }
 
-/* --- Right-To-Left Sliding Text Rotator --- */
-.text-rotator {
-    position: relative;
-    height: 120px;
-    margin: 0;
-    overflow: hidden;
-    width: 100%;
-}
-
-.text-set {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    opacity: 0;
-    visibility: hidden;
-}
-
-.text-set.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.glitch-text {
-    font-family: 'Orbitron', monospace;
-    font-weight: 900;
-    color: var(--text-color);
-    position: relative;
-    display: inline-block;
-    background: linear-gradient(45deg, var(--primary), var(--secondary));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-transform: uppercase;
-    white-space: nowrap;
-}
-
-.text-set.active .glitch-text {
-    animation: move-right-to-left 4s forwards;
-}
-
-.text-set.active .subtitle {
-    opacity: 0;
-    animation: fade-in-up 0.5s ease forwards;
-    animation-delay: 0.6s;
-}
-
-@keyframes move-right-to-left {
-    0% {
-        transform: translateX(100vw);
-        opacity: 0;
-        animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
-    }
-
-    15% {
-        transform: translateX(0);
-        opacity: 1;
-        animation-timing-function: linear;
-    }
-
-    85% {
-        transform: translateX(0);
-        opacity: 1;
-        animation-timing-function: cubic-bezier(0.5, 0, 0.75, 0);
-    }
-
-    100% {
-        transform: translateX(-100vw);
-        opacity: 0;
-    }
-}
-
-@keyframes fade-in-up {
-    0% {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    100% {
-        opacity: 0.9;
-        transform: translateY(0);
-    }
-}
-
 /* --- High-End Scroll Reveal Animations --- */
 .reveal,
 .reveal-up {
@@ -3049,9 +2975,20 @@ footer {
         text-align: center;
     }
 
+    .hero-rotator-box {
+        min-height: 94px;
+        margin-bottom: 8px;
+    }
+
     .hero-rotator {
         justify-content: center;
         text-align: center;
+    }
+
+    .rotator-slide.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .rotator-title,

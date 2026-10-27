@@ -80,10 +80,10 @@ export const experience = [
       "Participated in Agile workflows via daily **Scrum meetings**, utilizing **ClickUp** and **Azure Backlog** for task management."
     ],
     "tech": [
-      {
-        "title": "C#",
-        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
-      },
+      // {
+      //   "title": "C#",
+      //   "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
+      // },
       {
         "title": "JavaScript",
         "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
@@ -100,18 +100,18 @@ export const experience = [
         "title": "Tailwind",
         "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
       },
-      {
-        "title": "ASP.NET",
-        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg"
-      },
+      // {
+      //   "title": "ASP.NET",
+      //   "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg"
+      // },
       {
         "title": "Angular",
         "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"
       },
-      {
-        "title": "PostgreSQL",
-        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
-      },
+      // {
+      //   "title": "PostgreSQL",
+      //   "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+      // },
       {
         "title": "REST API",
         "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg"

@@ -9,8 +9,8 @@ function Chars({ text, leaving }) {
   return text.split('').map((char, i) => (
     <span
       key={i}
-      className={`rotator-char char${leaving ? ' out' : ''}`}
-      style={{ animationDelay: `${i * (leaving ? 0.02 : 0.04)}s` }}
+      className={`rotator-char${leaving ? ' out' : ''}`}
+      style={{ animationDelay: `${i * (leaving ? 0.02 : 0.035)}s` }}
     >
       {char === ' ' ? '\u00A0' : char}
     </span>
@@ -65,19 +65,20 @@ export default function TextRotator({ items }) {
   }, [items.length]);
 
   return (
-    <div className="hero-rotator text-rotator">
+    <div className="hero-rotator">
       {items.map((item, i) => {
         const active = i === current;
 
         return (
           <div
             key={item.title}
-            className={`rotator-slide text-set${active ? ' active' : ''}`}
+            className={`rotator-slide${active ? ' active' : ''}`}
+            aria-hidden={!active}
           >
-            <h2 className="rotator-title glitch-text" data-text={item.title}>
+            <h2 className="rotator-title">
               {active ? <Chars text={item.title} leaving={leaving} /> : item.title}
             </h2>
-            <p className={`rotator-subtitle subtitle${active && subtitleVisible ? ' visible' : ''}`}>
+            <p className={`rotator-subtitle${active && subtitleVisible ? ' visible' : ''}`}>
               {item.subtitle}
             </p>
           </div>

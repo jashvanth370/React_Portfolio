@@ -4,7 +4,7 @@ import TechPill from './TechPill';
 import { projects, projectFilters } from '../data/projects';
 import { asset } from '../utils';
 
-function GithubIcon({ size = 26 }) {
+function GithubIcon({ size = 22 }) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -19,7 +19,7 @@ function GithubIcon({ size = 26 }) {
   );
 }
 
-function ExternalIcon({ size = 13 }) {
+function ExternalIcon({ size = 12 }) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -45,26 +45,20 @@ function ProjectCard({ project, hidden }) {
 
   return (
     <Reveal className={`project-card${hidden ? ' hide' : ''}`}>
-      <div className="project-card-inner">
+      {/* Image container: on hover, only this image blurs and darkens, showing GitHub repo link(s) */}
+      <div className="project-image-wrapper">
         {project.badge && <span className="project-card-badge">{project.badge}</span>}
-        {project.image && <img src={asset(project.image)} alt={project.imageAlt ?? project.title} />}
-        <div className="project-info">
-          <h3>{project.cardTitle}</h3>
-          <p>{project.summary}</p>
+        {project.image && (
+          <img
+            src={asset(project.image)}
+            alt={project.imageAlt ?? project.title}
+            className="project-image"
+          />
+        )}
 
-          <div className="tech-stack">
-            {project.tech.map((tech, i) => (
-              <TechPill key={`${tech.title}-${i}`} title={tech.title} icon={tech.icon} />
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <div className="project-hover-overlay">
-        {isMultiRepo ? (
-          <div className="project-hover-content multi-repo">
-            <span className="project-hover-tag">Repositories</span>
-            <div className="project-hover-actions">
+        <div className="project-image-overlay">
+          {isMultiRepo ? (
+            <div className="project-image-hover-content multi-repo">
               <a
                 href={project.github}
                 target="_blank"
@@ -74,14 +68,10 @@ function ProjectCard({ project, hidden }) {
                 title="Open Frontend Repository on GitHub"
               >
                 <div className="github-icon-glow">
-                  <GithubIcon size={26} />
+                  <GithubIcon size={20} />
                 </div>
-                <div className="github-btn-meta">
-                  <span className="github-btn-label">{project.githubLabel || 'Frontend Repo'}</span>
-                  <span className="github-btn-action">
-                    Explore Code <ExternalIcon size={12} />
-                  </span>
-                </div>
+                <span className="github-btn-label">{project.githubLabel || 'Frontend Repo'}</span>
+                <ExternalIcon size={12} />
               </a>
 
               <a
@@ -93,39 +83,43 @@ function ProjectCard({ project, hidden }) {
                 title="Open Backend Repository on GitHub"
               >
                 <div className="github-icon-glow">
-                  <GithubIcon size={26} />
+                  <GithubIcon size={20} />
                 </div>
-                <div className="github-btn-meta">
-                  <span className="github-btn-label">{project.githubBackendLabel || 'Backend Repo'}</span>
-                  <span className="github-btn-action">
-                    Explore Code <ExternalIcon size={12} />
-                  </span>
-                </div>
+                <span className="github-btn-label">{project.githubBackendLabel || 'Backend Repo'}</span>
+                <ExternalIcon size={12} />
               </a>
             </div>
-          </div>
-        ) : (
-          <div className="project-hover-content single-repo">
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="project-github-btn project-github-btn--single"
-              aria-label={`View ${project.title} repository on GitHub`}
-              title="Open Repository on GitHub"
-            >
-              <div className="github-icon-glow">
-                <GithubIcon size={34} />
-              </div>
-              <div className="github-btn-meta">
-                <span className="github-btn-label">{project.githubLabel || 'View on GitHub'}</span>
-                <span className="github-btn-action">
-                  Explore Repository <ExternalIcon size={13} />
-                </span>
-              </div>
-            </a>
-          </div>
-        )}
+          ) : (
+            <div className="project-image-hover-content single-repo">
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-github-btn project-github-btn--single"
+                aria-label={`View ${project.title} repository on GitHub`}
+                title="Open Repository on GitHub"
+              >
+                <div className="github-icon-glow">
+                  <GithubIcon size={24} />
+                </div>
+                <span className="github-btn-label">{project.githubLabel || 'GitHub Repo'}</span>
+                <ExternalIcon size={13} />
+              </a>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Project text and tech stack: always visible and properly readable */}
+      <div className="project-info">
+        <h3>{project.cardTitle}</h3>
+        <p>{project.summary}</p>
+
+        <div className="tech-stack">
+          {project.tech.map((tech, i) => (
+            <TechPill key={`${tech.title}-${i}`} title={tech.title} icon={tech.icon} />
+          ))}
+        </div>
       </div>
     </Reveal>
   );

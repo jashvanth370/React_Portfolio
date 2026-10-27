@@ -127,6 +127,34 @@ function ProjectCard({ project, hidden }) {
 
 export default function Projects() {
   const [filter, setFilter] = useState('all');
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const handleFilterChange = (value) => {
+    setFilter(value);
+    setIsExpanded(false);
+  };
+
+  const filteredProjects = projects.filter((project) => {
+    if (filter === 'all') return true;
+    return Array.isArray(project.category)
+      ? project.category.includes(filter)
+      : project.category === filter;
+  });
+
+  const visibleProjects = isExpanded ? filteredProjects : filteredProjects.slice(0, 3);
+
+  const toggleExpand = () => {
+    if (isExpanded) {
+      setIsExpanded(false);
+      const projectsEl = document.getElementById('projects');
+      if (projectsEl) {
+        const topPos = projectsEl.getBoundingClientRect().top + window.pageYOffset - 80;
+        window.scrollTo({ top: Math.max(0, topPos), behavior: 'smooth' });
+      }
+    } else {
+      setIsExpanded(true);
+    }
+  };
 
   return (
     <section className="projects" id="projects">
@@ -139,7 +167,7 @@ export default function Projects() {
           <button
             key={item.value}
             className={`filter-btn${filter === item.value ? ' active' : ''}`}
-            onClick={() => setFilter(item.value)}
+            onClick={() => handleFilterChange(item.value)}
           >
             {item.label}
           </button>
@@ -147,22 +175,33 @@ export default function Projects() {
       </Reveal>
 
       <div className="projects-grid">
-        {projects.map((project) => {
-          const isHidden =
-            filter !== 'all' &&
-            (Array.isArray(project.category)
-              ? !project.category.includes(filter)
-              : project.category !== filter);
-
-          return (
-            <ProjectCard
-              key={project.title}
-              project={project}
-              hidden={isHidden}
-            />
-          );
-        })}
+        {visibleProjects.map((project) => (
+          <ProjectCard
+            key={project.title}
+            project={project}
+            hidden={false}
+          />
+        ))}
       </div>
+
+      {filteredProjects.length > 3 && (
+        <Reveal className="section-expand-container">
+          <button
+            type="button"
+            className={`section-expand-btn${isExpanded ? ' expanded' : ''}`}
+            onClick={toggleExpand}
+            aria-expanded={isExpanded}
+            aria-label={isExpanded ? 'Show fewer projects' : `View all ${filteredProjects.length} projects`}
+          >
+            <span className="expand-btn-text">
+              {isExpanded ? 'Show Fewer Projects' : `View All Projects (${filteredProjects.length})`}
+            </span>
+            <span className="expand-btn-icon-wrapper">
+              <i className={`fa-solid ${isExpanded ? 'fa-chevron-up' : 'fa-chevron-down'}`} />
+            </span>
+          </button>
+        </Reveal>
+      )}
     </section>
   );
 }

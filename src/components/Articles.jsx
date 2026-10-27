@@ -1,7 +1,25 @@
+import { useState } from 'react';
 import Reveal from './Reveal';
 import { mediumArticles, mediumProfileUrl } from '../data/articles';
 
 export default function Articles() {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const visibleArticles = isExpanded ? mediumArticles : mediumArticles.slice(0, 3);
+
+  const toggleExpand = () => {
+    if (isExpanded) {
+      setIsExpanded(false);
+      const articlesEl = document.getElementById('creations');
+      if (articlesEl) {
+        const topPos = articlesEl.getBoundingClientRect().top + window.pageYOffset - 80;
+        window.scrollTo({ top: Math.max(0, topPos), behavior: 'smooth' });
+      }
+    } else {
+      setIsExpanded(true);
+    }
+  };
+
   return (
     <section className="features articles-section" id="creations">
       <div className="articles-container">
@@ -30,7 +48,7 @@ export default function Articles() {
 
         {/* Medium Articles Grid */}
         <div className="articles-grid">
-          {mediumArticles.map((article, index) => (
+          {visibleArticles.map((article, index) => (
             <Reveal
               key={article.link}
               variant="reveal-up"
@@ -80,6 +98,25 @@ export default function Articles() {
             </Reveal>
           ))}
         </div>
+
+        {mediumArticles.length > 3 && (
+          <Reveal className="section-expand-container">
+            <button
+              type="button"
+              className={`section-expand-btn${isExpanded ? ' expanded' : ''}`}
+              onClick={toggleExpand}
+              aria-expanded={isExpanded}
+              aria-label={isExpanded ? 'Show fewer articles' : `View all ${mediumArticles.length} articles`}
+            >
+              <span className="expand-btn-text">
+                {isExpanded ? 'Show Fewer Articles' : `View All Articles (${mediumArticles.length})`}
+              </span>
+              <span className="expand-btn-icon-wrapper">
+                <i className={`fa-solid ${isExpanded ? 'fa-chevron-up' : 'fa-chevron-down'}`} />
+              </span>
+            </button>
+          </Reveal>
+        )}
       </div>
     </section>
   );

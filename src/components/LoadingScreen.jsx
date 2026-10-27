@@ -1,5 +1,86 @@
 import { useEffect, useState } from 'react';
 
+const FALLING_SYMBOLS = [
+  // Column strip 0% - 15%
+  { symbol: '</>', left: '2%', delay: '0.1s', duration: '4.8s', type: 'code', size: 'md' },
+  { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', left: '5%', delay: '1.4s', duration: '5.2s', type: 'framework', size: 'lg' },
+  { symbol: '{ }', left: '8%', delay: '2.8s', duration: '4.4s', type: 'code', size: 'sm' },
+  { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg', left: '11%', delay: '0.6s', duration: '6.0s', type: 'ide', size: 'md' },
+  { symbol: '=>', left: '14%', delay: '3.5s', duration: '4.6s', type: 'code', size: 'sm' },
+
+  // Column strip 15% - 30%
+  { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg', left: '17%', delay: '2.1s', duration: '5.5s', type: 'lang', size: 'md' },
+  { symbol: '⚡', left: '20%', delay: '0.4s', duration: '4.2s', type: 'code', size: 'md' },
+  { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg', left: '23%', delay: '1.8s', duration: '5.8s', type: 'tool', size: 'lg' },
+  { symbol: '[ ]', left: '26%', delay: '3.9s', duration: '4.9s', type: 'code', size: 'sm' },
+  { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg', left: '29%', delay: '0.9s', duration: '5.1s', type: 'lang', size: 'md' },
+
+  // Column strip 30% - 45%
+  { symbol: '&&', left: '32%', delay: '2.5s', duration: '4.5s', type: 'code', size: 'sm' },
+  { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg', left: '35%', delay: '1.1s', duration: '6.2s', type: 'framework', size: 'lg' },
+  { symbol: 'λ', left: '38%', delay: '3.2s', duration: '4.3s', type: 'code', size: 'md' },
+  { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg', left: '41%', delay: '0.3s', duration: '5.7s', type: 'lang', size: 'md' },
+  { symbol: '01', left: '44%', delay: '4.2s', duration: '4.7s', type: 'code', size: 'sm' },
+
+  // Column strip 45% - 60%
+  { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg', left: '47%', delay: '1.7s', duration: '5.4s', type: 'framework', size: 'lg' },
+  { symbol: '::', left: '50%', delay: '0.7s', duration: '4.6s', type: 'code', size: 'sm' },
+  { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg', left: '53%', delay: '2.9s', duration: '5.9s', type: 'lang', size: 'lg' },
+  { symbol: '!=', left: '56%', delay: '1.3s', duration: '4.4s', type: 'code', size: 'sm' },
+  { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg', left: '59%', delay: '3.6s', duration: '5.3s', type: 'tool', size: 'md' },
+
+  // Column strip 60% - 75%
+  { symbol: 'fn()', left: '62%', delay: '0.5s', duration: '4.8s', type: 'code', size: 'sm' },
+  { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg', left: '65%', delay: '2.3s', duration: '6.1s', type: 'tool', size: 'lg' },
+  { symbol: '/*', left: '68%', delay: '4.0s', duration: '4.5s', type: 'code', size: 'sm' },
+  { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg', left: '71%', delay: '1.2s', duration: '5.8s', type: 'ide', size: 'md' },
+  { symbol: '<T>', left: '74%', delay: '3.0s', duration: '4.7s', type: 'code', size: 'sm' },
+
+  // Column strip 75% - 90%
+  { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg', left: '77%', delay: '0.8s', duration: '5.6s', type: 'framework', size: 'lg' },
+  { symbol: '⌘', left: '80%', delay: '2.6s', duration: '4.6s', type: 'code', size: 'md' },
+  { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg', left: '83%', delay: '1.5s', duration: '6.0s', type: 'tool', size: 'md' },
+  { symbol: '||', left: '86%', delay: '3.8s', duration: '4.4s', type: 'code', size: 'sm' },
+  { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg', left: '89%', delay: '0.2s', duration: '5.7s', type: 'lang', size: 'lg' },
+
+  // Column strip 90% - 99%
+  { symbol: '$', left: '92%', delay: '2.4s', duration: '4.3s', type: 'code', size: 'sm' },
+  { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg', left: '95%', delay: '1.6s', duration: '6.3s', type: 'framework', size: 'lg' },
+  { symbol: '->', left: '98%', delay: '3.3s', duration: '4.8s', type: 'code', size: 'sm' },
+
+  // Additional staggered density stream
+  { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg', left: '4%', delay: '3.7s', duration: '5.3s', type: 'framework', size: 'md' },
+  { symbol: 'const', left: '9%', delay: '4.5s', duration: '4.7s', type: 'code', size: 'sm' },
+  { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg', left: '15%', delay: '4.1s', duration: '5.9s', type: 'lang', size: 'md' },
+  { symbol: '===', left: '21%', delay: '4.8s', duration: '4.3s', type: 'code', size: 'sm' },
+  { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg', left: '27%', delay: '3.4s', duration: '5.6s', type: 'lang', size: 'md' },
+  { symbol: '~', left: '33%', delay: '4.7s', duration: '4.5s', type: 'code', size: 'sm' },
+  { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg', left: '39%', delay: '4.3s', duration: '6.0s', type: 'framework', size: 'md' },
+  { symbol: '++', left: '46%', delay: '3.1s', duration: '4.2s', type: 'code', size: 'sm' },
+  { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg', left: '52%', delay: '4.6s', duration: '5.4s', type: 'framework', size: 'md' },
+  { symbol: '?', left: '58%', delay: '2.0s', duration: '4.1s', type: 'code', size: 'sm' },
+  { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg', left: '64%', delay: '3.9s', duration: '6.2s', type: 'tool', size: 'md' },
+  { symbol: '#', left: '70%', delay: '4.9s', duration: '4.6s', type: 'code', size: 'sm' },
+  { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg', left: '76%', delay: '4.4s', duration: '5.7s', type: 'tool', size: 'md' },
+  { symbol: '010', left: '81%', delay: '1.9s', duration: '4.4s', type: 'code', size: 'sm' },
+  { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-original.svg', left: '87%', delay: '4.8s', duration: '6.4s', type: 'ide', size: 'md' },
+  { symbol: 'git', left: '93%', delay: '4.3s', duration: '4.6s', type: 'code', size: 'sm' },
+  { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg', left: '97%', delay: '5.1s', duration: '5.8s', type: 'ide', size: 'md' },
+
+  // Third layer for deep matrix density
+  { symbol: '{ }', left: '6%', delay: '5.0s', duration: '4.9s', type: 'code', size: 'md' },
+  { symbol: '</>', left: '18%', delay: '5.2s', duration: '4.6s', type: 'code', size: 'lg' },
+  { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg', left: '24%', delay: '4.9s', duration: '5.5s', type: 'tool', size: 'md' },
+  { symbol: '⚡', left: '36%', delay: '5.1s', duration: '4.3s', type: 'code', size: 'md' },
+  { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg', left: '42%', delay: '5.3s', duration: '5.8s', type: 'tool', size: 'md' },
+  { symbol: '=>', left: '49%', delay: '5.0s', duration: '4.5s', type: 'code', size: 'sm' },
+  { symbol: 'npm', left: '61%', delay: '4.7s', duration: '4.2s', type: 'code', size: 'sm' },
+  { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg', left: '67%', delay: '5.2s', duration: '6.0s', type: 'tool', size: 'md' },
+  { symbol: 'λ', left: '79%', delay: '5.4s', duration: '4.7s', type: 'code', size: 'sm' },
+  { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg', left: '85%', delay: '5.0s', duration: '5.6s', type: 'tool', size: 'md' },
+  { symbol: '/* */', left: '91%', delay: '5.3s', duration: '4.4s', type: 'code', size: 'sm' },
+];
+
 export default function LoadingScreen({ onComplete }) {
   const [progress, setProgress] = useState(0);
   const [phase, setPhase] = useState(0);
@@ -55,6 +136,27 @@ export default function LoadingScreen({ onComplete }) {
       {/* Background ambient cyber glow grid */}
       <div className="portal-grid-bg" />
       <div className="portal-light-beam" />
+
+      {/* Falling Coding Rain Matrix (Symbols & Tech Icons Only - High Density, No Names) */}
+      <div className="falling-code-matrix" aria-hidden="true">
+        {FALLING_SYMBOLS.map((item, idx) => (
+          <div
+            key={idx}
+            className={`falling-code-item type-${item.type || 'code'} size-${item.size || 'md'}`}
+            style={{
+              left: item.left,
+              animationDelay: item.delay,
+              animationDuration: item.duration,
+            }}
+          >
+            {item.icon ? (
+              <img src={item.icon} alt="" className="falling-code-icon" loading="eager" />
+            ) : (
+              <span className="falling-code-symbol">{item.symbol}</span>
+            )}
+          </div>
+        ))}
+      </div>
 
       {/* Skip button for quick access */}
       <button className="skip-intro-btn" onClick={triggerExit} aria-label="Skip Introduction">

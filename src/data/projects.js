@@ -12,7 +12,7 @@ export const projects = [
     "githubBackend": "https://github.com/SENG34213/backend",
     "githubBackendLabel": "Backend Repo",
     "category": ["typescript", "java"],
-    "image": "assets/GamingCastle.png",
+    "image": "assets/castle.png",
     "imageAlt": "Gaming Castle — Online Lounge & Station Management System",
     "contributions": [
       "Architected customer layout and dashboard using Angular 19 Standalone Components & Signal state.",

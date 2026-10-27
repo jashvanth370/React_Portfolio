@@ -14,26 +14,45 @@ const SECTIONS = [
 export default function QuickNav({ activeSection }) {
   const [isVisible, setIsVisible] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [footerOffset, setFooterOffset] = useState(0);
   const widgetRef = useRef(null);
 
-  // QuickNav ONLY appears after user crosses the Home section
+  // QuickNav appears as soon as user starts scrolling past the top home section
   useEffect(() => {
     const handleScroll = () => {
-      const homeEl = document.getElementById('home');
-      const homeThreshold = homeEl ? homeEl.offsetTop + homeEl.offsetHeight - 120 : 500;
       const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
+      const homeEl = document.getElementById('home');
+      const homeThreshold = homeEl ? Math.min(homeEl.offsetHeight * 0.35, 220) : 180;
 
-      // Crossed home section and active section is NOT home
-      const isPastHome = scrollY > homeThreshold && activeSection !== 'home';
+      // User has started scrolling past home / hero
+      const isPastHome = scrollY > homeThreshold || (activeSection && activeSection !== 'home');
       setIsVisible(isPastHome);
       if (!isPastHome) {
         setMenuOpen(false);
       }
+
+      // Check footer position to dynamically lift QuickNav and prevent overlapping social icons
+      const footerEl = document.querySelector('footer');
+      if (footerEl) {
+        const footerRect = footerEl.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        if (footerRect.top < windowHeight) {
+          // Footer entered viewport: lift capsule above footer
+          const overlap = Math.max(0, windowHeight - footerRect.top);
+          setFooterOffset(overlap);
+        } else {
+          setFooterOffset(0);
+        }
+      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll, { passive: true });
     handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
   }, [activeSection]);
 
   // Close menu on outside click or Escape key
@@ -72,20 +91,28 @@ export default function QuickNav({ activeSection }) {
     }
     const targetEl = document.getElementById(id);
     if (targetEl) {
-      targetEl.scrollIntoView({ behavior: 'smooth' });
+      const navHeight = 75;
+      const targetPos = targetEl.getBoundingClientRect().top + window.pageYOffset - navHeight;
+      window.scrollTo({ top: Math.max(0, targetPos), behavior: 'smooth' });
     }
   };
-
-  if (!isVisible) return null;
 
   return (
     <aside
       ref={widgetRef}
-      className={`quick-nav-widget${menuOpen ? ' menu-active' : ''}`}
+      className={`quick-nav-widget${isVisible ? ' visible' : ''}${menuOpen ? ' menu-active' : ''}`}
+      style={{
+        transform: isVisible
+          ? footerOffset > 0
+            ? `translateY(-${footerOffset + 8}px)`
+            : 'translateY(0)'
+          : 'translateY(20px)',
+      }}
       aria-label="Quick section navigation"
+      aria-hidden={!isVisible}
     >
       {/* Expanded Quick Jump Popover Menu (No Inner Scrolling) */}
-      {menuOpen && (
+      {menuOpen && isVisible && (
         <div className="quick-nav-popover" role="dialog" aria-modal="true" aria-label="Section selector">
           <div className="quick-popover-header">
             <div className="quick-header-title">

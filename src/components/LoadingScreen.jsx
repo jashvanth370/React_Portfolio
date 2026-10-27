@@ -6,30 +6,26 @@ export default function LoadingScreen({ onComplete }) {
   const [isExiting, setIsExiting] = useState(false);
 
   useEffect(() => {
-    // Phase 0: Character waves & says "Hi!"
-    // Phase 1: Says "Welcome to my portfolio!"
-    // Phase 2: Says "Initializing workspace..."
-    // Phase 3: "Let's build something great!" -> Portal Opens
+    // Dialogue Phase Progression (each message gets ~1.4 seconds to read comfortably)
+    const phaseTimer1 = setTimeout(() => setPhase(1), 1400);
+    const phaseTimer2 = setTimeout(() => setPhase(2), 2800);
+    const phaseTimer3 = setTimeout(() => setPhase(3), 4200);
 
-    const phaseTimer1 = setTimeout(() => setPhase(1), 600);
-    const phaseTimer2 = setTimeout(() => setPhase(2), 1400);
-    const phaseTimer3 = setTimeout(() => setPhase(3), 2100);
-
-    // Progress counter: smoothly fills up to 100% over ~2.4 seconds
+    // Progress counter: smoothly fills up to 100% over ~5.2 seconds
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(interval);
           return 100;
         }
-        const step = Math.floor(Math.random() * 8) + 4;
-        return Math.min(prev + step, 100);
+        return prev + 1;
       });
-    }, 80);
+    }, 52);
 
+    // Auto-launch into portfolio after the full sequence concludes (~5.8 seconds)
     const completeTimer = setTimeout(() => {
       triggerExit();
-    }, 2800);
+    }, 5800);
 
     return () => {
       clearTimeout(phaseTimer1);
@@ -211,7 +207,13 @@ export default function LoadingScreen({ onComplete }) {
           </div>
           <div className="portal-progress-meta">
             <span className="portal-loading-status">
-              {progress < 40 ? 'Loading Modules...' : progress < 80 ? 'Compiling Architecture...' : 'Ready to Launch!'}
+              {progress < 25
+                ? 'Initializing Environment...'
+                : progress < 55
+                ? 'Loading Architecture & Stack...'
+                : progress < 85
+                ? 'Compiling Experience & Projects...'
+                : 'Ready to Launch! 🚀'}
             </span>
             <span className="portal-percent">{progress}%</span>
           </div>

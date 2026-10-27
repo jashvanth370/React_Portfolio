@@ -22,6 +22,7 @@ export const NAV_LINKS = [
   { id: 'about', label: 'About' },
   { id: 'experience', label: 'Experience' },
   { id: 'projects', label: 'Work' },
+  { id: 'creations', label: 'Articles' },
   { id: 'contact', label: 'Contact' },
 ];
 
@@ -29,5 +30,6 @@ export const SOCIAL = {
   github: 'https://github.com/jashvanth370',
   linkedin: 'https://www.linkedin.com/in/balakirushnan-jashvanth-736a72280/',
   whatsapp: 'https://wa.me/94779430824',
+  medium: 'https://medium.com/@jashvanth',
   email: 'mailto:balakirushnanjashvanth@gmail.com',
 };

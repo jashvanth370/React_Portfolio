@@ -43,8 +43,9 @@ export default function App() {
         </main>
 
         <Footer />
-        <QuickNav activeSection={active} />
       </div>
+
+      <QuickNav activeSection={active} />
     </>
   );
 }

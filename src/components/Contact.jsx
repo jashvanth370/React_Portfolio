@@ -14,8 +14,29 @@ export default function Contact() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    const formData = new FormData(formRef.current);
+    const name = formData.get('name') || '';
+    const email = formData.get('email') || '';
+    const subject = formData.get('subject') || '';
+    const message = formData.get('message') || '';
+
+    // Supplies all aliases so {{message}}, {{request}}, {{name}}, {{email}} always populate
+    const templateParams = {
+      name,
+      user_name: name,
+      from_name: name,
+      email,
+      user_email: email,
+      from_email: email,
+      reply_to: email,
+      subject,
+      title: subject,
+      message,
+      request: message,
+    };
+
     try {
-      await emailjs.sendForm(EMAILJS.serviceId, EMAILJS.templateId, formRef.current, {
+      await emailjs.send(EMAILJS.serviceId, EMAILJS.templateId, templateParams, {
         publicKey: EMAILJS.publicKey,
       });
       setSent(true);

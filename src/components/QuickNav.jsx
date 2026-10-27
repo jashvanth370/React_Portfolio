@@ -14,7 +14,6 @@ const SECTIONS = [
 export default function QuickNav({ activeSection }) {
   const [isVisible, setIsVisible] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [footerOffset, setFooterOffset] = useState(0);
   const widgetRef = useRef(null);
 
   // QuickNav appears as soon as user starts scrolling past the top home section
@@ -22,7 +21,7 @@ export default function QuickNav({ activeSection }) {
     const handleScroll = () => {
       const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
       const homeEl = document.getElementById('home');
-      const homeThreshold = homeEl ? Math.min(homeEl.offsetHeight * 0.35, 220) : 180;
+      const homeThreshold = homeEl ? Math.min(homeEl.offsetHeight * 0.3, 200) : 160;
 
       // User has started scrolling past home / hero
       const isPastHome = scrollY > homeThreshold || (activeSection && activeSection !== 'home');
@@ -30,29 +29,11 @@ export default function QuickNav({ activeSection }) {
       if (!isPastHome) {
         setMenuOpen(false);
       }
-
-      // Check footer position to dynamically lift QuickNav and prevent overlapping social icons
-      const footerEl = document.querySelector('footer');
-      if (footerEl) {
-        const footerRect = footerEl.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-        if (footerRect.top < windowHeight) {
-          // Footer entered viewport: lift capsule above footer
-          const overlap = Math.max(0, windowHeight - footerRect.top);
-          setFooterOffset(overlap);
-        } else {
-          setFooterOffset(0);
-        }
-      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('resize', handleScroll, { passive: true });
     handleScroll();
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, [activeSection]);
 
   // Close menu on outside click or Escape key
@@ -101,13 +82,6 @@ export default function QuickNav({ activeSection }) {
     <aside
       ref={widgetRef}
       className={`quick-nav-widget${isVisible ? ' visible' : ''}${menuOpen ? ' menu-active' : ''}`}
-      style={{
-        transform: isVisible
-          ? footerOffset > 0
-            ? `translateY(-${footerOffset + 8}px)`
-            : 'translateY(0)'
-          : 'translateY(20px)',
-      }}
       aria-label="Quick section navigation"
       aria-hidden={!isVisible}
     >

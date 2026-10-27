@@ -42,6 +42,7 @@ export default function ProjectModal({ project, onClose }) {
           &times;
         </span>
         <h2 id="modalTitle">{shown?.title}</h2>
+        {shown?.badge && <span className="modal-badge">{shown.badge}</span>}
         <p id="modalDescription">{shown?.description}</p>
         <p>
           <strong>Tech Stack:</strong> <span id="modalTech">{shown?.techList}</span>
@@ -49,9 +50,30 @@ export default function ProjectModal({ project, onClose }) {
         <p>
           <strong>Time Period:</strong> <span id="modalPeriod">{shown?.period}</span>
         </p>
-        <a id="modalGithub" href={shown?.github ?? '#'} target="_blank" rel="noopener noreferrer">
-          View on GitHub
-        </a>
+        {shown?.contributions && (
+          <div className="modal-contributions">
+            <strong>Key Contributions:</strong>
+            <ul>
+              {shown.contributions.map((item, idx) => (
+                <li key={idx}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+        <div className="modal-actions" style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: '16px' }}>
+          {shown?.github && (
+            <a id="modalGithub" href={shown.github} target="_blank" rel="noopener noreferrer">
+              <i className="fa-brands fa-github" style={{ marginRight: '6px' }} />
+              {shown.githubLabel ?? 'View on GitHub'}
+            </a>
+          )}
+          {shown?.githubBackend && (
+            <a href={shown.githubBackend} target="_blank" rel="noopener noreferrer" className="modal-secondary-link">
+              <i className="fa-brands fa-github" style={{ marginRight: '6px' }} />
+              Backend Repository
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );

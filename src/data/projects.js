@@ -1,12 +1,70 @@
 export const projects = [
   {
+    "title": "Gaming Castle — Online Lounge & Station Management System",
+    "cardTitle": "Gaming Castle",
+    "badge": "Group Project",
+    "summary": "Enterprise gaming lounge & esports management platform with real-time station bookings, tournament ladders, and Spring Boot microservices.",
+    "description": "Enterprise-grade full-stack distributed system built for gaming lounges and esports centers. It handles real-time station availability, customer bookings, tournament management, and microservice orchestration with Eureka, Gateway, PostgreSQL, and Docker.",
+    "techList": "Angular 19, TypeScript, Spring Boot, Java, Microservices, Netflix Eureka, PostgreSQL, Docker, Jest",
+    "period": "Oct 2026 - Present",
+    "github": "https://github.com/SENG34213/frontend",
+    "githubLabel": "Frontend Repo",
+    "githubBackend": "https://github.com/SENG34213/backend",
+    "githubBackendLabel": "Backend Repo",
+    "category": ["typescript", "java"],
+    "image": "assets/GamingCastle.png",
+    "imageAlt": "Gaming Castle — Online Lounge & Station Management System",
+    "contributions": [
+      "Architected customer layout and dashboard using Angular 19 Standalone Components & Signal state.",
+      "Implemented customer booking flow, booking services, reactive forms, profile modals, and route guards.",
+      "Built backend tournament service endpoints including player registration queries and updates.",
+      "Engineered targeted notification and reminder microservice handlers with Spring Boot.",
+      "Wrote comprehensive unit tests across frontend and backend using Jest and Spring Test."
+    ],
+    "tech": [
+      {
+        "title": "Angular",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg"
+      },
+      {
+        "title": "TypeScript",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+      },
+      {
+        "title": "Spring Boot",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
+      },
+      {
+        "title": "Java",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+      },
+      {
+        "title": "PostgreSQL",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+      },
+      {
+        "title": "Docker",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+      },
+      {
+        "title": "Jest",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg"
+      },
+      {
+        "title": "GitHub",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+      }
+    ]
+  },
+  {
     "title": "Hotel Management System",
     "cardTitle": "Hotel Management System",
-    "summary": "Full-stack booking platform with payment integration.",
+    "summary": "Full-stack hospitality booking platform with JWT authentication, real-time room availability, and secure Stripe payment processing.",
     "description": "A full-stack hotel booking system with authentication, room booking, admin dashboard and Stripe payment integration.",
-    "techList": "React, Spring Boot, MySQL, Stripe",
+    "techList": "React, Spring Boot, MySQL, Stripe, JWT, AWS S3",
     "period": "Jan 2025 - Mar 2025",
     "github": "https://github.com/jashvanth370/Hotel_Management",
+    "githubLabel": "GitHub Repo",
     "category": "java",
     "image": "assets/Hotel Management.JPG",
     "imageAlt": "Hotel Management System",
@@ -52,11 +110,12 @@ export const projects = [
   {
     "title": "Event Ticket Booking System",
     "cardTitle": "Event Ticket Booking",
-    "summary": "A full-stack web application for discovering and booking tickets to events with a smooth user experience and secure payments. This system enables users to browse events by category, location, or date, add events to their wishlist, and make payments through Stripe. Admins can manage event listings, while users enjoy fast, mobile-friendly access to tickets.",
+    "summary": "Interactive ticket reservation platform enabling event discovery by category and date with real-time seat booking and Stripe checkout.",
     "description": "An event booking platform with wishlist, JWT authentication, payment gateway and admin event management.",
-    "techList": "React, Node.js, MySQL",
+    "techList": "React, Spring Boot, Java, MySQL, SCSS, Stripe, JWT",
     "period": "Apr 2025 - Jun 2025",
     "github": "https://github.com/jashvanth370/Ticket-Booking-Project",
+    "githubLabel": "GitHub Repo",
     "category": "java",
     "image": "assets/EventBooking.JPG",
     "imageAlt": "Event Ticket Booking System",
@@ -98,11 +157,12 @@ export const projects = [
   {
     "title": "Social Media Platform",
     "cardTitle": "Social Media App",
-    "summary": "MERN-based Instagram-style platform.",
+    "summary": "Instagram-inspired MERN social network featuring media posts, dynamic like/comment feeds, user profiles, and real-time interaction.",
     "description": "MERN stack social media application with posts, likes, comments, profile pictures and real-time updates.",
-    "techList": "React, MongoDB, Express, Node.js",
+    "techList": "React, MongoDB, Express, Node.js, JWT, Bootstrap",
     "period": "Jul 2025 - Aug 2025",
     "github": "https://github.com/jashvanth370/Social-Media-Platform",
+    "githubLabel": "GitHub Repo",
     "category": "javascript",
     "image": "assets/SocialMedia.JPG",
     "imageAlt": "Social Media App",
@@ -147,12 +207,13 @@ export const projects = [
   },
   {
     "title": "E-Commerce Platform",
-    "cardTitle": "E-Commerce Website",
-    "summary": "A full-featured e-commerce web application built with the MERN stack (MongoDB, Express.js, React, Node.js). This project includes user authentication, product management, cart functionality, admin features, and a modern responsive UI.",
+    "cardTitle": "E-Commerce Platform",
+    "summary": "Full-featured shopping web app with user authentication, category filters, persistent cart management, and admin inventory control.",
     "description": "Full e-commerce system with cart, product filtering, authentication and payment integration.",
-    "techList": "React, MongoDB, Express, Node.js",
+    "techList": "React, MongoDB, Express, Node.js, JWT, Bootstrap",
     "period": "Sep 2025 - Nov 2025",
     "github": "https://github.com/jashvanth370/E-commerce-MERN",
+    "githubLabel": "GitHub Repo",
     "category": "javascript",
     "image": "assets/ECommerce Mern.JPG",
     "imageAlt": "E-Commerce Website",
@@ -198,11 +259,12 @@ export const projects = [
   {
     "title": "Import-Export Management Platform",
     "cardTitle": "Import-Export System",
-    "summary": "A web-based platform that streamlines the process of importing and exporting products between countries by connecting exporters, importers, and government officers in a secure, efficient environment.",
-    "description": "A web-based platform that streamlines the process of importing and exporting products between countries by connecting exporters, importers, and government officers in a secure, efficient environment.",
-    "techList": "React, Spring Boot, MySQL, CSS3",
+    "summary": "Cross-border trade portal connecting exporters, importers, and customs officers with end-to-end shipment and document tracking.",
+    "description": "Cross-border trade portal connecting exporters, importers, and customs officers with end-to-end shipment and document tracking.",
+    "techList": "React, Spring Boot, Java, MySQL, CSS3, JWT",
     "period": "Sep 2025 - Nov 2025",
     "github": "https://github.com/jashvanth370/Import-Export-Products-Project",
+    "githubLabel": "GitHub Repo",
     "category": "java",
     "image": "assets/photo-1763568258752-fe55f4ab7267.avif",
     "imageAlt": "Import-Export Management Platform",
@@ -239,12 +301,13 @@ export const projects = [
   },
   {
     "title": "Library Management System",
-    "cardTitle": "Library Management System",
-    "summary": "The Library Management System is a full-stack web application that allows users to register, log in, and manage books securely.",
-    "description": "The Library Management System is a full-stack web application that allows users to register, log in, and manage books securely.",
-    "techList": "React, ASP.NET, SQLite, JWT, Tailwind",
+    "cardTitle": "Library Management (.NET)",
+    "summary": "Book cataloging and circulation system built with ASP.NET Core Web API, Entity Framework Core, SQLite, and a modern React client.",
+    "description": "Book cataloging and circulation system built with ASP.NET Core Web API, Entity Framework Core, SQLite, and a modern React client.",
+    "techList": "React, ASP.NET, SQLite, Entity Framework, Tailwind, JWT",
     "period": "Jan 2026 - Feb 2026",
     "github": "https://github.com/jashvanth370/Library-management-system",
+    "githubLabel": "GitHub Repo",
     "category": "csharp",
     "image": "assets/Library.JPG",
     "imageAlt": "Library Management System",
@@ -289,12 +352,13 @@ export const projects = [
   },
   {
     "title": "Real-Time Chat Application",
-    "cardTitle": "Real-Time Chat Application",
-    "summary": "The app allows instant messaging between users, supporting both mobile (via APK) and web browser usage.",
-    "description": "The app allows instant messaging between users, supporting both mobile (via APK) and web browser usage",
-    "techList": "React, React Native, Node.js, Express.js, Socket.io, MicrosoftSSO, JWT, Azure",
+    "cardTitle": "Real-Time Chat App",
+    "summary": "Cross-platform messaging solution for web and mobile APK featuring instant Socket.io communication and Microsoft SSO integration.",
+    "description": "Cross-platform messaging solution for web and mobile APK featuring instant Socket.io communication and Microsoft SSO integration.",
+    "techList": "React, React Native, Node.js, Express, Socket.io, Microsoft SSO, Azure",
     "period": "Sep 2025 - Nov 2025",
     "github": "https://github.com/jashvanth370/Chat-Application",
+    "githubLabel": "GitHub Repo",
     "category": "javascript",
     "image": "assets/premium_photo-1663040543387-cb7c78c4f012.avif",
     "imageAlt": "Real-Time Chat Application",
@@ -335,15 +399,16 @@ export const projects = [
   },
   {
     "title": "Library Management",
-    "cardTitle": "Library Management",
-    "summary": "A full-stack web application designed for managing library books. It features a secure REST API backend built with .NET 8 (C#) and a dynamic, beautifully styled frontend built with Angular 17.",
-    "description": "A full-stack web application designed for managing library books. It features a secure REST API backend built with .NET 8 (C#) and a dynamic, beautifully styled frontend built with Angular 17.",
-    "techList": "Angular, ASP.NET, SQLite, JWT, VanilaCSS",
+    "cardTitle": "Library Management (Angular)",
+    "summary": "Modern digital library app pairing an Angular 17 reactive interface with a high-throughput .NET 8 REST API and SQLite persistence.",
+    "description": "Modern digital library app pairing an Angular 17 reactive interface with a high-throughput .NET 8 REST API and SQLite persistence.",
+    "techList": "Angular 17, TypeScript, ASP.NET Core, C#, SQLite, JWT",
     "period": "Jan 2026 - Feb 2026",
     "github": "https://github.com/jashvanth370/Library-Management",
+    "githubLabel": "GitHub Repo",
     "category": "typescript",
     "image": "assets/photo-1564798605859-a4ab4a561b2a.avif",
-    "imageAlt": "E-Commerce Website",
+    "imageAlt": "Library Management (Angular 17 / .NET 8)",
     "tech": [
       {
         "title": "ASP.NET",
@@ -381,15 +446,17 @@ export const projects = [
   },
   {
     "title": "Fuel Station Management System",
-    "cardTitle": "Fuel Station Management System",
-    "summary": "We have developed a website for managing fuel stations. Our system allows fuel station owners to register and manage their fuel stations through a dedicated dashboard.",
-    "description": "We have developed a website for managing fuel stations. Our system allows fuel station owners to register and manage their fuel stations through a dedicated dashboard.",
-    "techList": "React, Spring Boot, MySql, JWT, Bootstrap",
+    "cardTitle": "Fuel Station System",
+    "badge": "Group Project",
+    "summary": "Commercial station management portal enabling fuel station owners to track pump inventory, daily sales, and operational analytics.",
+    "description": "Commercial station management portal enabling fuel station owners to track pump inventory, daily sales, and operational analytics.",
+    "techList": "React, Spring Boot, Java, MySQL, JWT, Bootstrap",
     "period": "Dec 2024 - Mar 2025",
     "github": "https://github.com/Kirisi15/Fuel_Station",
+    "githubLabel": "GitHub Repo",
     "category": "java",
     "image": "assets/FuelStation.JPG",
-    "imageAlt": "Fuel Station Management",
+    "imageAlt": "Fuel Station Management System",
     "tech": [
       {
         "title": "Spring Boot",

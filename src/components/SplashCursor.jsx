@@ -22,7 +22,15 @@ function SplashCursor({
   const canvasRef = useRef(null);
   const animationFrameId = useRef(null);
 
+  const isTouchOrReduced =
+    typeof window !== 'undefined' &&
+    ((window.matchMedia && window.matchMedia('(pointer: coarse)').matches) ||
+     (window.matchMedia && window.matchMedia('(hover: none)').matches) ||
+     (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) ||
+     window.innerWidth < 768);
+
   useEffect(() => {
+    if (isTouchOrReduced) return undefined;
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -1056,7 +1064,9 @@ function SplashCursor({
       window.removeEventListener('touchend', handleTouchEnd);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [isTouchOrReduced]);
+
+  if (isTouchOrReduced) return null;
 
   return (
     <div

@@ -37,21 +37,23 @@ export default function Contact() {
       <div className="contact-container">
         <Reveal variant="reveal-left" className="contact-form">
           <form id="contactForm" ref={formRef} onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="name">Name</label>
-              <input type="text" id="name" name="name" required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input type="email" id="email" name="email" required />
+            <div className="form-row">
+              <div className="form-group">
+                <label htmlFor="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required />
+              </div>
+              <div className="form-group">
+                <label htmlFor="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required />
+              </div>
             </div>
             <div className="form-group">
               <label htmlFor="subject">Subject</label>
-              <input type="text" id="subject" name="subject" required />
+              <input type="text" id="subject" name="subject" placeholder="Project Inquiry / Message Subject" required />
             </div>
             <div className="form-group">
               <label htmlFor="message">Message</label>
-              <textarea id="message" name="message" required />
+              <textarea id="message" name="message" rows="3" placeholder="Tell me about your project..." required />
             </div>
             <button type="submit" className="submit-btn">
               Send Message
@@ -63,39 +65,32 @@ export default function Contact() {
         </Reveal>
 
         <Reveal variant="reveal-right" className="contact-info">
-          <h3>Connect With Us , Let’s Build Something Amazing</h3>
-          <p>I’m open to internships, collaborations, and exciting projects.</p>
-          <br />
+          <h3>Let’s Work Together</h3>
+          <p>
+            Have a project in mind, an exciting role to discuss, or want to collaborate? Feel free to reach out directly.
+          </p>
 
           <div className="info-item">
             <div className="info-icon">📧</div>
             <div className="info-details">
               <h4>Email</h4>
-              <p>balakirushnanjashvanth@gmail.com</p>
+              <a href="mailto:balakirushnanjashvanth@gmail.com">balakirushnanjashvanth@gmail.com</a>
             </div>
           </div>
           <div className="info-item">
             <div className="info-icon">📱</div>
             <div className="info-details">
               <h4>Phone</h4>
-              <p>+94 77-(94 30 824)</p>
+              <a href="tel:+94779430824">+94 77-(94 30 824)</a>
             </div>
           </div>
           <div className="info-item">
             <div className="info-icon">📍</div>
             <div className="info-details">
               <h4>Location</h4>
-              <p>Dalugama Kelaniya Gampaha, Sri Lanka</p>
+              <p>Dalugama Kelaniya, Gampaha, Sri Lanka</p>
             </div>
           </div>
-
-          {/* <div className="map-container">
-            <div className="map-placeholder">
-              <p>Interactive Map</p>
-              <p style={{ fontSize: '0.9rem', marginTop: '10px' }}>Batticaloa, Sri Lanka</p>
-            </div>
-            <div className="map-overlay" />
-          </div> */}
         </Reveal>
       </div>
     </section>

@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import Background from './components/Background';
 import SplashCursor from './components/SplashCursor';
+import LoadingScreen from './components/LoadingScreen';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -17,25 +19,30 @@ import { SECTION_IDS } from './config';
 export default function App() {
   const { theme, toggleTheme } = useTheme();
   const { active, scrolled } = useScrollSpy(SECTION_IDS);
+  const [isLoading, setIsLoading] = useState(true);
 
   return (
     <>
-      <SplashCursor />
-      <Background />
-      <Navbar activeSection={active} scrolled={scrolled} theme={theme} onToggleTheme={toggleTheme} />
+      {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
 
-      <main>
-        <Hero />
-        <About />
-        <Experience />
-        <Education />
-        <Skills />
-        <Projects />
-        <Articles />
-        <Contact />
-      </main>
+      <div className={`app-root${!isLoading ? ' app-revealed' : ''}`}>
+        <SplashCursor />
+        <Background />
+        <Navbar activeSection={active} scrolled={scrolled} theme={theme} onToggleTheme={toggleTheme} />
 
-      <Footer />
+        <main>
+          <Hero />
+          <About />
+          <Experience />
+          <Education />
+          <Skills />
+          <Projects />
+          <Articles />
+          <Contact />
+        </main>
+
+        <Footer />
+      </div>
     </>
   );
 }

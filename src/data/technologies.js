@@ -1,163 +1,276 @@
+export const technologyCategories = [
+  { id: 'all', label: 'All Technologies', icon: '⚡' },
+  { id: 'frontend', label: 'Frontend & Mobile', icon: '💻' },
+  { id: 'backend', label: 'Backend & APIs', icon: '⚙️' },
+  { id: 'database', label: 'Databases & Cloud', icon: '🗄️' },
+  { id: 'tools', label: 'DevOps & Tools', icon: '🛠️' },
+];
+
 export const technologies = [
+  // Frontend & Mobile
   {
-    "name": "Java",
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
-    "alt": "Java"
+    name: "React JS",
+    category: "frontend",
+    tag: "Library",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    alt: "React JS"
   },
   {
-    "name": "JavaScript",
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-    "alt": "JavaScript"
+    name: "Angular",
+    category: "frontend",
+    tag: "Framework",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg",
+    alt: "Angular"
   },
   {
-    "name": "TypeScript",
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
-    "alt": "TypeScript"
+    name: "TypeScript",
+    category: "frontend",
+    tag: "Language",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+    alt: "TypeScript"
   },
   {
-    "name": "Python",
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-    "alt": "Python"
+    name: "JavaScript",
+    category: "frontend",
+    tag: "Language",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+    alt: "JavaScript"
   },
   {
-    "name": "C",
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
-    "alt": "C"
+    name: "React Native",
+    category: "frontend",
+    tag: "Mobile",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    alt: "React Native"
   },
   {
-    "name": "C#",
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg",
-    "alt": "C#"
+    name: "Tailwind CSS",
+    category: "frontend",
+    tag: "Styling",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+    alt: "Tailwind CSS"
   },
   {
-    "name": "PHP",
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
-    "alt": "PHP"
+    name: "HTML5",
+    category: "frontend",
+    tag: "Markup",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+    alt: "HTML5"
   },
   {
-    "name": "SQL",
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg",
-    "alt": "SQL"
+    name: "CSS3",
+    category: "frontend",
+    tag: "Styling",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+    alt: "CSS3"
   },
   {
-    "name": "HTML5",
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-    "alt": "HTML5"
+    name: "Bootstrap",
+    category: "frontend",
+    tag: "UI Library",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
+    alt: "Bootstrap"
+  },
+
+  // Backend & APIs
+  {
+    name: "Spring Boot",
+    category: "backend",
+    tag: "Framework",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
+    alt: "Spring Boot"
   },
   {
-    "name": "CSS3",
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-    "alt": "CSS3"
+    name: "Java",
+    category: "backend",
+    tag: "Language",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+    alt: "Java"
   },
   {
-    "name": "Spring Boot",
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
-    "alt": "Spring Boot"
+    name: "ASP.NET Core",
+    category: "backend",
+    tag: "Framework",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg",
+    alt: "ASP.NET Core"
   },
   {
-    "name": "React JS",
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-    "alt": "React JS"
+    name: "C#",
+    category: "backend",
+    tag: "Language",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg",
+    alt: "C#"
   },
   {
-    "name": "Angular",
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg",
-    "alt": "Angular"
+    name: "Node JS",
+    category: "backend",
+    tag: "Runtime",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+    alt: "Node JS"
   },
   {
-    "name": "ASP.NET",
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg",
-    "alt": "ASP.NET"
+    name: "Express JS",
+    category: "backend",
+    tag: "Backend",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+    alt: "Express JS"
   },
   {
-    "name": "Node JS",
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-    "alt": "Node JS"
+    name: "Python",
+    category: "backend",
+    tag: "Language",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    alt: "Python"
   },
   {
-    "name": "Express JS",
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-    "alt": "Express JS"
+    name: "Entity Framework",
+    category: "backend",
+    tag: "ORM",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg",
+    alt: "Entity Framework"
   },
   {
-    "name": "React Native",
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-    "alt": "React Native"
+    name: "JWT Auth",
+    category: "backend",
+    tag: "Security",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/1/1d/JWT_LOGO.svg",
+    alt: "JWT"
   },
   {
-    "name": "Bootstrap",
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
-    "alt": "Bootstrap"
+    name: "C",
+    category: "backend",
+    tag: "Systems",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
+    alt: "C"
   },
   {
-    "name": "Entity Framework",
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg",
-    "alt": "Entity Framework"
+    name: "PHP",
+    category: "backend",
+    tag: "Backend",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
+    alt: "PHP"
+  },
+
+  // Databases & Cloud
+  {
+    name: "PostgreSQL",
+    category: "database",
+    tag: "Relational DB",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+    alt: "PostgreSQL"
   },
   {
-    "name": "JWT",
-    "icon": "https://upload.wikimedia.org/wikipedia/commons/1/1d/JWT_LOGO.svg",
-    "alt": "JWT"
+    name: "MySQL",
+    category: "database",
+    tag: "Relational DB",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+    alt: "MySQL"
   },
   {
-    "name": "MySQL",
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
-    "alt": "MySQL"
+    name: "MongoDB",
+    category: "database",
+    tag: "NoSQL DB",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+    alt: "MongoDB"
   },
   {
-    "name": "MongoDB",
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
-    "alt": "MongoDB"
+    name: "Microsoft Azure",
+    category: "database",
+    tag: "Cloud Platform",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg",
+    alt: "Microsoft Azure"
   },
   {
-    "name": "PostgreSQL",
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
-    "alt": "PostgreSQL"
+    name: "AWS",
+    category: "database",
+    tag: "Cloud Platform",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+    alt: "AWS"
   },
   {
-    "name": "AWS",
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
-    "alt": "AWS"
+    name: "Docker",
+    category: "database",
+    tag: "Containers",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+    alt: "Docker"
+  },
+
+  // DevOps & Tools
+  {
+    name: "Git & GitHub",
+    category: "tools",
+    tag: "Version Control",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+    alt: "Git/GitHub"
   },
   {
-    "name": "Git/GitHub",
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
-    "alt": "Git/GitHub"
+    name: "Azure DevOps",
+    category: "tools",
+    tag: "CI/CD & Boards",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuredevops/azuredevops-original.svg",
+    alt: "Azure DevOps"
   },
   {
-    "name": "JIRA",
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg",
-    "alt": "JIRA"
+    name: "VS Code",
+    category: "tools",
+    tag: "IDE",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
+    alt: "VS Code"
   },
   {
-    "name": "Microsoft Azure",
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg",
-    "alt": "Microsoft Azure"
+    name: "IntelliJ IDEA",
+    category: "tools",
+    tag: "IDE",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg",
+    alt: "IntelliJ IDEA"
   },
   {
-    "name": "Bcrypt",
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg",
-    "alt": "Bcrypt"
+    name: "Visual Studio",
+    category: "tools",
+    tag: "IDE",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg",
+    alt: "Visual Studio"
   },
   {
-    "name": "PyCharm",
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg",
-    "alt": "PyCharm"
+    name: "JIRA",
+    category: "tools",
+    tag: "Agile Tracking",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg",
+    alt: "JIRA"
   },
   {
-    "name": "VS Code",
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
-    "alt": "VS Code"
+    name: "PyCharm",
+    category: "tools",
+    tag: "IDE",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg",
+    alt: "PyCharm"
+  }
+];
+
+export const engineeringPillars = [
+  {
+    title: "Clean Architecture & OOP",
+    icon: "🏛️",
+    description: "SOLID Principles, Design Patterns, Separation of Concerns, and Maintainable Systems.",
+    skills: ["SOLID Principles", "Clean Architecture", "OOP Design", "Code Reusability"]
   },
   {
-    "name": "Visual Studio",
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg",
-    "alt": "Visual Studio"
+    title: "Agile & Product Delivery",
+    icon: "⚡",
+    description: "Daily Scrum Standups, Sprint Estimations, Azure Backlogs, and Rapid Iteration.",
+    skills: ["Scrum Methodology", "Sprint Planning", "Backlog Refinement", "CI/CD Workflows"]
   },
   {
-    "name": "IntelliJ IDEA",
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg",
-    "alt": "IntelliJ IDEA"
+    title: "System Troubleshooting",
+    icon: "🔍",
+    description: "Root Cause Debugging, Network Profiling, Performance Tuning, and Error Logging.",
+    skills: ["Debugging & Profiling", "Critical Thinking", "Unit Testing", "Troubleshooting"]
+  },
+  {
+    title: "Teamwork & Communication",
+    icon: "🤝",
+    description: "Cross-Functional Collaboration, Technical Documentation, Ownership, and Mentorship.",
+    skills: ["Technical Writing", "Effective Communication", "Time Management", "Leadership"]
   }
 ];
 
@@ -169,9 +282,9 @@ export const softSkills = [
   "Agile Development",
   "Leadership",
   "Effective Communication",
-  "Googling",
-  "Time Management",
   "Critical Thinking",
+  "Time Management",
   "Attention to Detail",
-  "Multi-tasking"
+  "Microservices",
+  "API Design"
 ];

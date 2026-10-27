@@ -85,17 +85,17 @@ export default function Contact() {
             <div className="info-icon">📍</div>
             <div className="info-details">
               <h4>Location</h4>
-              <p>Batticaloa, Sri Lanka</p>
+              <p>Dalugama Kelaniya Gampaha, Sri Lanka</p>
             </div>
           </div>
 
-          <div className="map-container">
+          {/* <div className="map-container">
             <div className="map-placeholder">
               <p>Interactive Map</p>
               <p style={{ fontSize: '0.9rem', marginTop: '10px' }}>Batticaloa, Sri Lanka</p>
             </div>
             <div className="map-overlay" />
-          </div>
+          </div> */}
         </Reveal>
       </div>
     </section>

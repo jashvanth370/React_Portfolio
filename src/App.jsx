@@ -12,6 +12,7 @@ import Projects from './components/Projects';
 import Articles from './components/Articles';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import QuickNav from './components/QuickNav';
 import useTheme from './hooks/useTheme';
 import useScrollSpy from './hooks/useScrollSpy';
 import { SECTION_IDS } from './config';
@@ -42,6 +43,7 @@ export default function App() {
         </main>
 
         <Footer />
+        <QuickNav activeSection={active} />
       </div>
     </>
   );

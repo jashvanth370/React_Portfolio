@@ -117,16 +117,6 @@ export default function Hero() {
               <span>Get In Touch</span>
               <i className="fa-regular fa-paper-plane" />
             </HashLink>
-
-            <a
-              href={asset('assets/BalakirushnanJashvanth.pdf')}
-              className="hero-btn hero-btn-resume"
-              download
-              aria-label="Download Balakirushnan Jashvanth Resume"
-            >
-              <span>Download CV</span>
-              <i className="fa-solid fa-download" />
-            </a>
           </div>
 
           {/* Interactive Social & Quick Copy Email */}

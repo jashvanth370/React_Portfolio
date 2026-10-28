@@ -81,13 +81,13 @@ export default function Hero() {
         {/* Left Column: Bio & Calls to Action */}
         <Reveal variant="reveal-left" className="hero-left">
           {/* Status Badge */}
-          <div className="hero-status-pill">
+          {/* <div className="hero-status-pill">
             <span className="status-indicator">
               <span className="status-dot-ping" />
               <span className="status-dot" />
             </span>
             <span className="status-text">Available for Opportunities</span>
-          </div>
+          </div> */}
 
           {/* Primary Heading (Single h1 for SEO & a11y) */}
           <h1 className="hero-title">

@@ -20,7 +20,7 @@ export default function About() {
           </Reveal>
 
           <Reveal className="about-subtitle">
-            Bridging scalable software architecture, clean code principles, and intuitive user experiences.
+            Driven by curiosity, craft, and a relentless passion for turning real-world problems into meaningful solutions.
           </Reveal>
         </div>
 
@@ -55,7 +55,7 @@ export default function About() {
 
             <div className="about-profile-info">
               <h3 className="about-profile-name">Jashvanth Balakirushnan</h3>
-              <p className="about-profile-title">Full-Stack Software Engineer</p>
+              <p className="about-profile-title">Software Engineer &amp; Builder</p>
 
               <div className="about-meta-list">
                 <div className="about-meta-item">
@@ -67,7 +67,7 @@ export default function About() {
                   <span>University of Kelaniya, Sri Lanka</span>
                 </div>
                 <div className="about-meta-item">
-                  <i className="fa-solid fa-microchip"></i>
+                  <i className="fa-solid fa-compass"></i>
                   <span>Net-Centric Specialization</span>
                 </div>
               </div>
@@ -117,68 +117,69 @@ export default function About() {
 
               <div className="about-card-top">
                 <div className="about-card-icon-box">
-                  <i className="fa-solid fa-code"></i>
+                  <i className="fa-solid fa-compass"></i>
                 </div>
                 <div>
-                  <h3 className="about-card-heading">Engineering Journey</h3>
-                  <span className="about-card-sub">Crafting resilient, high-impact software</span>
+                  <h3 className="about-card-heading">My Story &amp; Journey</h3>
+                  <span className="about-card-sub">Curiosity, purpose, and the passion to build</span>
                 </div>
               </div>
 
               <div className="about-bio-text">
                 <p>
-                  I am a final-year Software Engineering undergraduate at the <strong>University of Kelaniya</strong>, specializing in <strong>Net-Centric Software Engineering</strong>. My focus is on architecting high-performance backend systems with <strong>ASP.NET Core</strong> and <strong>Node.js</strong>, seamlessly united with responsive, dynamic frontend experiences built using <strong>React</strong> and <strong>Angular</strong>.
+                  I am a final-year Software Engineering undergraduate at the <strong>University of Kelaniya</strong>. My journey in technology began with a deep fascination for how software shapes our daily lives and how creative ideas can be brought to life to solve tangible problems. What started as simple curiosity has grown into a lifelong devotion to the craft of building thoughtful, dependable, and meaningful software.
                 </p>
                 <p>
-                  Beyond writing code, I am dedicated to clean architecture, SOLID design principles, and comprehensive database design with <strong>PostgreSQL</strong>. I thrive on translating intricate business logic into maintainable, elegant solutions that deliver speed, security, and exceptional user delight.
+                  What excites me most is taking complex, ambiguous challenges and breaking them down with patience, structure, and empathy. I believe great engineering is not just about writing code—it is about understanding the people who use what we build, continuously expanding our perspectives, and taking deep personal ownership in everything we create.
                 </p>
               </div>
 
-              {/* Core Competencies Badges */}
+              {/* Personal Strengths / Values Badges */}
               <div className="about-competencies">
-                <span className="comp-tag"><i className="fa-solid fa-check"></i> Clean Architecture</span>
-                <span className="comp-tag"><i className="fa-solid fa-check"></i> REST &amp; WebSockets</span>
-                <span className="comp-tag"><i className="fa-solid fa-check"></i> Relational Modeling</span>
-                <span className="comp-tag"><i className="fa-solid fa-check"></i> Responsive SPAs</span>
-                <span className="comp-tag"><i className="fa-solid fa-check"></i> Agile &amp; DevOps</span>
+                <span className="comp-tag"><i className="fa-solid fa-lightbulb"></i> Problem Solver</span>
+                <span className="comp-tag"><i className="fa-solid fa-compass"></i> Curiosity-Driven</span>
+                <span className="comp-tag"><i className="fa-solid fa-heart"></i> Empathy &amp; Purpose</span>
+                <span className="comp-tag"><i className="fa-solid fa-users"></i> Team Collaborator</span>
+                <span className="comp-tag"><i className="fa-solid fa-seedling"></i> Lifelong Learner</span>
+                <span className="comp-tag"><i className="fa-solid fa-bullseye"></i> High Ownership</span>
               </div>
             </Reveal>
 
-            {/* Bento Card 2: Three Engineering Pillars */}
+            {/* Bento Card 2: Three Personal Pillars */}
             <div className="about-pillars-grid">
               <Reveal variant="reveal-right" className="about-pillar-box pillar-orange">
                 <div className="pillar-header">
                   <div className="pillar-icon">
-                    <i className="fa-solid fa-layer-group"></i>
+                    <i className="fa-solid fa-fire"></i>
                   </div>
-                  <h4 className="pillar-name">Full-Stack Craft</h4>
+                  <h4 className="pillar-name">Curiosity &amp; Drive</h4>
                 </div>
                 <p className="pillar-summary">
-                  End-to-end fluency connecting slick user interfaces to secure, robust API backends and optimized persistence layers.
+                  Driven by an inquisitive mind that loves exploring the unknown, embracing hard challenges, and finding creative solutions.
                 </p>
               </Reveal>
 
               <Reveal variant="reveal-right" className="about-pillar-box pillar-cyan">
                 <div className="pillar-header">
                   <div className="pillar-icon">
-                    <i className="fa-solid fa-cubes-stacked"></i>
+                    <i className="fa-solid fa-gem"></i>
                   </div>
-                  <h4 className="pillar-name">Clean Architecture</h4>
+                  <h4 className="pillar-name">Craft &amp; Dedication</h4>
                 </div>
                 <p className="pillar-summary">
-                  Writing decoupled, testable, and self-documenting code built around SOLID patterns and maintainable design systems.
+                  Believing that quality is born from care and patience. I bring strong attention to detail and high personal standards to all my work.
                 </p>
               </Reveal>
 
               <Reveal variant="reveal-right" className="about-pillar-box pillar-purple">
                 <div className="pillar-header">
                   <div className="pillar-icon">
-                    <i className="fa-solid fa-bolt"></i>
+                    <i className="fa-solid fa-people-group"></i>
                   </div>
-                  <h4 className="pillar-name">Growth Mindset</h4>
+                  <h4 className="pillar-name">Collaboration &amp; Growth</h4>
                 </div>
                 <p className="pillar-summary">
-                  Continuously mastering modern cloud ecosystems, performance profiling, and agile development methodologies.
+                  Thriving in supportive team environments where open dialogue, mutual empathy, and shared enthusiasm elevate everyone.
                 </p>
               </Reveal>
             </div>
@@ -187,14 +188,14 @@ export default function About() {
             <Reveal variant="reveal-right" className="about-quote-card">
               <div className="quote-mark">“</div>
               <p className="quote-text">
-                Writing software isn&apos;t just about making things work—it&apos;s about building solutions that are reliable, maintainable, and engineered to scale gracefully.
+                Software is fundamentally about people. The greatest fulfillment comes from understanding real human needs, thinking with empathy, and crafting solutions that leave a lasting positive impact.
               </p>
               <div className="quote-author-row">
                 <span className="quote-author">— Balakirushnan Jashvanth</span>
                 <div className="quote-hashtags">
-                  <span>#CleanCode</span>
-                  <span>#ContinuousLearning</span>
-                  <span>#SystemsDesign</span>
+                  <span>#LifelongLearner</span>
+                  <span>#PurposeDriven</span>
+                  <span>#CuriousBuilder</span>
                 </div>
               </div>
             </Reveal>

@@ -95,11 +95,11 @@ export const projects = [
       },
       {
         "title": "JWT",
-        "icon": "https://upload.wikimedia.org/wikipedia/commons/1/1d/JWT_LOGO.svg"
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jwt/jwt-original.svg"
       },
       {
         "title": "AWS S3",
-        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain.svg"
       },
       {
         "title": "GitHub",
@@ -150,7 +150,7 @@ export const projects = [
       },
       {
         "title": "JWT",
-        "icon": "https://upload.wikimedia.org/wikipedia/commons/1/1d/JWT_LOGO.svg"
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jwt/jwt-original.svg"
       }
     ]
   },
@@ -189,7 +189,7 @@ export const projects = [
       },
       {
         "title": "JWT",
-        "icon": "https://upload.wikimedia.org/wikipedia/commons/1/1d/JWT_LOGO.svg"
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jwt/jwt-original.svg"
       },
       {
         "title": "Bootstrap",
@@ -240,7 +240,7 @@ export const projects = [
       },
       {
         "title": "JWT",
-        "icon": "https://upload.wikimedia.org/wikipedia/commons/1/1d/JWT_LOGO.svg"
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jwt/jwt-original.svg"
       },
       {
         "title": "Bootstrap",
@@ -338,7 +338,7 @@ export const projects = [
       },
       {
         "title": "JWT",
-        "icon": "https://upload.wikimedia.org/wikipedia/commons/1/1d/JWT_LOGO.svg"
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jwt/jwt-original.svg"
       },
       {
         "title": "Entity Framework",
@@ -385,7 +385,7 @@ export const projects = [
       },
       {
         "title": "JWT",
-        "icon": "https://upload.wikimedia.org/wikipedia/commons/1/1d/JWT_LOGO.svg"
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jwt/jwt-original.svg"
       },
       {
         "title": "Azure Backlog",
@@ -428,7 +428,7 @@ export const projects = [
       },
       {
         "title": "JWT",
-        "icon": "https://upload.wikimedia.org/wikipedia/commons/1/1d/JWT_LOGO.svg"
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jwt/jwt-original.svg"
       },
       {
         "title": "Vanila CSS",
@@ -480,7 +480,7 @@ export const projects = [
       },
       {
         "title": "JWT",
-        "icon": "https://upload.wikimedia.org/wikipedia/commons/1/1d/JWT_LOGO.svg"
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jwt/jwt-original.svg"
       },
       {
         "title": "GitHub",

@@ -46,7 +46,7 @@ export const experience = [
       },
       {
         title: "AWS",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aws/aws-original.svg"
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain.svg"
       }
     ]
   },

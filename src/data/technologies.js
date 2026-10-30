@@ -133,7 +133,7 @@ export const technologies = [
     name: "JWT Auth",
     category: "backend",
     tag: "Security",
-    icon: "https://upload.wikimedia.org/wikipedia/commons/1/1d/JWT_LOGO.svg",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jwt/jwt-original.svg",
     alt: "JWT"
   },
   {
@@ -184,7 +184,7 @@ export const technologies = [
     name: "AWS",
     category: "database",
     tag: "Cloud Platform",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain.svg",
     alt: "AWS"
   },
   {
